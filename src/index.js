@@ -7,8 +7,10 @@ import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import store from "./redux/store";
 import {yellow} from "@mui/material/colors";
-import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+
 const theme = createTheme({
     typography: {
         fontFamily: 'Raleway'
@@ -36,9 +38,9 @@ ReactDOM.render(
         <BrowserRouter>
             <Provider store={store}>
                 <ThemeProvider theme={theme}>
-                    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <App/>
-                    </MuiPickersUtilsProvider>
+                    </LocalizationProvider>
                 </ThemeProvider>
             </Provider>
         </BrowserRouter>

@@ -9,7 +9,7 @@ import {
     Radio, RadioGroup, Select, TextField, Typography,
 } from "@mui/material";
 import {useState} from "react";
-import {DatePicker, TimePicker} from "@material-ui/pickers";
+import {DatePicker, TimePicker} from "@mui/lab";
 import {DateRange} from "@mui/icons-material";
 
 const SendMessagePage = () => {
@@ -178,11 +178,12 @@ const SendMessagePage = () => {
                                                         variant="dialog"
                                                         inputVariant="outlined"
                                                         margin="dense"
-                                                        value={scheduleDate}
+                                                        date={scheduleDate}
                                                         onChange={date => setScheduleDate(date)}
                                                         fullWidth={true}
-                                                        emptyLabel="Select Schedule Date"
-                                                        format="yyyy/MM/dd"
+                                                        toolbarTitle="Select Schedule Date"
+                                                        inputFormat="yyyy/MM/dd"
+                                                        renderInput={props => <TextField size="small" {...props} />}
                                                     />
                                                 </Grid>
                                                 <Grid item={true}>
@@ -196,13 +197,17 @@ const SendMessagePage = () => {
                                                         variant="dialog"
                                                         inputVariant="outlined"
                                                         margin="dense"
+                                                        label="Schedule Time"
                                                         value={scheduleTime}
                                                         onChange={time => setScheduleTime(time)}
                                                         fullWidth={true}
                                                         emptyLabel="Select Start Date"
-                                                        format="HH:MM a"
+                                                        inputFormat="HH:MM a"
                                                         ampm={true}
                                                         views={['hours', 'minutes']}
+                                                        ampmInClock={true}
+                                                        toolbarTitle="Select Schedule Time"
+                                                        renderInput={props => <TextField size="small" {...props} />}
                                                     />
                                                 </Grid>
                                             </Grid>

@@ -52,7 +52,7 @@ const GroupsPage = () => {
                                     size="small"
                                 />
                             </Grid>
-                            <Grid item={true} xs={12} md={2}>
+                            <Grid item={true} xs={12} md={3}>
                                 <Select
                                     fullWidth={true}
                                     name="mobileMoneyProvider"
@@ -75,10 +75,10 @@ const GroupsPage = () => {
                     </Box>
                     <Box>
                         <Grid container={true} justifyContent="space-between" spacing={2}>
-                            <Grid item={true} xs={12} md="auto">
+                            <Grid item={true} xs={12} md={9}>
                                 <Typography variant="h5">Manage Groups</Typography>
                             </Grid>
-                            <Grid item={true} xs={12} md="auto">
+                            <Grid item={true} xs={12} md={3}>
                                 <Select
                                     fullWidth={true}
                                     name="mobileMoneyProvider"
@@ -152,6 +152,17 @@ const GroupsPage = () => {
                                 </Table>
                             </TableContainer>
                         )}
+
+                        <Grid container={true} justifyContent="flex-end">
+                            <Grid item={true}>
+                                <Button
+                                    sx={{borderWidth: 2, mt: 2}}
+                                    size="small"
+                                    variant="outlined">
+                                    Save
+                                </Button>
+                            </Grid>
+                        </Grid>
                     </Box>
                 </Container>
             </Box>

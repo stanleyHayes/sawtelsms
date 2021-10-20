@@ -8,11 +8,11 @@ import {
     LinearProgress,
     Paper,
     Table, TableBody, TableCell,
-    TableContainer, TableHead, TableRow,
+    TableContainer, TableHead, TableRow, TextField,
     Typography
 } from "@mui/material";
-import {DatePicker} from "@material-ui/pickers";
-import {useState} from "react";
+import {DatePicker} from "@mui/lab";
+import React, {useState} from "react";
 import {DateRange} from "@mui/icons-material";
 import {useSelector} from "react-redux";
 import {selectReports} from "../../redux/reports/report-reducer";
@@ -64,6 +64,7 @@ const ReportsPage = () => {
                                         fullWidth={true}
                                         emptyLabel="Select Start Date"
                                         format="yyyy/MM/dd"
+                                        renderInput={props => <TextField size="small" {...props} />}
                                     />
                                 </Grid>
                                 <Grid item={true}>
@@ -86,6 +87,8 @@ const ReportsPage = () => {
                                         fullWidth={true}
                                         emptyLabel="Select End Date"
                                         format="yyyy/MM/dd"
+                                        date={endDate}
+                                        renderInput={props => <TextField size="small" {...props} />}
                                     />
                                 </Grid>
                                 <Grid item={true}>
