@@ -13,35 +13,57 @@ import {
 import {useState} from "react";
 import validator from "validator";
 import Layout from "../../components/layout/layout";
+import {Link} from "react-router-dom";
+import {makeStyles} from "@mui/styles";
 
-const ForgotPasswordPage = () => {
+const LoginPage = () => {
 
-    const [email, setEmail] = useState("");
-    const [error, setError] = useState("");
+    const [user, setUser] = useState({});
+    const [error, setError] = useState({});
+    const {password, email} = user;
 
     const handleSubmit = event => {
         event.preventDefault();
 
+
         if (!email) {
-            setError('Email field required');
+            setError({error, email: 'Email field required'});
             return;
         } else {
-            setError(null);
+            setError({error, email: null});
         }
+
 
         if (!validator.isEmail(email)) {
-            setError('Invalid email');
+            setError({error, email: 'Email field required'});
             return;
         } else {
-            setError(null);
+            setError({error, email: null});
         }
 
-        console.log(email);
+        if (!password) {
+            setError({error, password: 'Password field required'});
+            return;
+        } else {
+            setError({error, password: null});
+        }
+
+        console.log(user);
     }
 
     const handleChange = event => {
-        setEmail(event.target.value);
+        setUser({...user, [event.target.name]: event.target.value});
     }
+
+    const useStyles = makeStyles(() => {
+        return {
+            link: {
+                textDecoration: 'none'
+            }
+        }
+    });
+
+    const classes = useStyles();
 
     return (
         <Layout>
@@ -57,14 +79,13 @@ const ForgotPasswordPage = () => {
             }}>
                 <Container>
                     <Grid container={true} justifyContent="center">
-                        <Grid item={true} xs={12} md={5}>
+                        <Grid item={true} xs={12} md={4}>
                             <Card variant="outlined" sx={{borderWidth: 2}}>
                                 <CardContent>
                                     <form onSubmit={handleSubmit}>
                                         <Stack spacing={2} direction="column">
 
                                             <Typography
-                                                mb={1}
                                                 align="center"
                                                 fontWeight='bolder'
                                                 variant="h4">
@@ -72,10 +93,9 @@ const ForgotPasswordPage = () => {
                                             </Typography>
 
                                             <Typography
-                                                mb={1}
                                                 align="center"
-                                                variant="body2">
-                                                Enter email associated with your account
+                                                variant="h6">
+                                                Login
                                             </Typography>
 
                                             <TextField
@@ -83,24 +103,49 @@ const ForgotPasswordPage = () => {
                                                 value={email}
                                                 type="email"
                                                 variant="outlined"
-                                                error={Boolean(error)}
+                                                error={Boolean(error.email)}
                                                 label="Email"
-                                                placeholder="Email"
+                                                placeholder="Enter email"
                                                 onChange={handleChange}
                                                 fullWidth={true}
                                                 required={true}
-                                                helperText={email}
+                                                helperText={error.email}
                                                 margin="dense"
                                                 size="small"
                                             />
 
+
+                                            <TextField
+                                                name="password"
+                                                value={password}
+                                                type="password"
+                                                variant="outlined"
+                                                error={Boolean(error.password)}
+                                                label="Password"
+                                                placeholder="Password"
+                                                onChange={handleChange}
+                                                fullWidth={true}
+                                                required={true}
+                                                helperText={error.password}
+                                                margin="dense"
+                                                size="small"
+                                            />
+
+                                            <Link to="/forgot-password" className={classes.link}>
+                                                <Button
+                                                    fullWidth={true}
+                                                    size="medium"
+                                                    variant="text"
+                                                    sx={{borderWidth: 2}}>
+                                                    Forgot Password
+                                                </Button>
+                                            </Link>
+
                                             <Button
-                                                onClick={handleSubmit}
-                                                type="submit"
                                                 size="medium"
                                                 variant="outlined"
                                                 sx={{borderWidth: 2}}>
-                                                Get New Password
+                                                Login
                                             </Button>
 
                                         </Stack>
@@ -115,4 +160,4 @@ const ForgotPasswordPage = () => {
     )
 }
 
-export default ForgotPasswordPage;
+export default LoginPage;

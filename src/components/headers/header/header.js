@@ -4,6 +4,7 @@ import DesktopHeader from "../navbar/desktop-header";
 import MobileHeader from "../navbar/mobile-header";
 import TabletHeader from "../navbar/tablet-header";
 import TabletTopBar from "../top-nav/tablet-top-nav";
+import MobileTopBar from "../top-nav/mobile-top-nav";
 
 const Header = () => {
 
@@ -14,7 +15,7 @@ const Header = () => {
                 <DesktopHeader/>
             </Hidden>
             <Hidden mdUp={true}>
-                <TabletTopBar/>
+                <MobileTopBar/>
                 <MobileHeader/>
             </Hidden>
             <Hidden only={['xs', 'sm', 'lg', 'xl']}>

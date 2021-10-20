@@ -31,7 +31,7 @@ const LandingPage = () => {
                     pb: 8
                 }}>
                 <Grid container={true} alignItems="center">
-                    <Grid xs={12} md={6}>
+                    <Grid item={true} xs={12} md={6}>
                         <Typography variant="h2" mb={4}>
                             Sawtel SMS Portal
                         </Typography>

@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 
 import {useState} from "react";
+import Layout from "../../components/layout/layout";
 
 const ResetPasswordPage = () => {
 
@@ -50,76 +51,80 @@ const ResetPasswordPage = () => {
     }
 
     return (
-        <Box sx={{
-            backgroundColor: 'secondary.main',
-            minHeight: '100vh',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100vw'
-        }}>
-            <Container>
-                <Grid container={true} justifyContent="center">
-                    <Grid item={true} xs={12} md={4}>
-                        <Card variant="outlined" sx={{borderWidth: 2}}>
-                            <CardContent>
-                                <form onSubmit={handleSubmit}>
-                                    <Stack spacing={2} direction="column">
+        <Layout>
+            <Box sx={{
+                backgroundColor: 'secondary.main',
+                minHeight: '100vh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100vw',
+                paddingTop: 2,
+                paddingBottom: 2
+            }}>
+                <Container>
+                    <Grid container={true} justifyContent="center">
+                        <Grid item={true} xs={12} md={4}>
+                            <Card variant="outlined" sx={{borderWidth: 2}}>
+                                <CardContent>
+                                    <form onSubmit={handleSubmit}>
+                                        <Stack spacing={2} direction="column">
 
-                                        <Typography
-                                            align="center"
-                                            fontWeight='bolder'
-                                            variant="h4">
-                                            SAWTEL SMS
-                                        </Typography>
+                                            <Typography
+                                                align="center"
+                                                fontWeight='bolder'
+                                                variant="h4">
+                                                SAWTEL SMS
+                                            </Typography>
 
-                                        <TextField
-                                            name="password"
-                                            value={password}
-                                            type="password"
-                                            variant="outlined"
-                                            error={Boolean(error.password)}
-                                            label="Password"
-                                            placeholder="Password"
-                                            onChange={handleChange}
-                                            fullWidth={true}
-                                            required={true}
-                                            helperText={error.password}
-                                            margin="dense"
-                                            size="small"
-                                        />
+                                            <TextField
+                                                name="password"
+                                                value={password}
+                                                type="password"
+                                                variant="outlined"
+                                                error={Boolean(error.password)}
+                                                label="Password"
+                                                placeholder="Password"
+                                                onChange={handleChange}
+                                                fullWidth={true}
+                                                required={true}
+                                                helperText={error.password}
+                                                margin="dense"
+                                                size="small"
+                                            />
 
-                                        <TextField
-                                            name="confirmPassword"
-                                            value={confirmPassword}
-                                            type="password"
-                                            variant="outlined"
-                                            error={Boolean(error.confirmPassword)}
-                                            label="Re-Type Password"
-                                            placeholder="Re-Type Password"
-                                            onChange={handleChange}
-                                            fullWidth={true}
-                                            required={true}
-                                            helperText={error.confirmPassword}
-                                            margin="dense"
-                                            size="small"
-                                        />
+                                            <TextField
+                                                name="confirmPassword"
+                                                value={confirmPassword}
+                                                type="password"
+                                                variant="outlined"
+                                                error={Boolean(error.confirmPassword)}
+                                                label="Re-Type Password"
+                                                placeholder="Re-Type Password"
+                                                onChange={handleChange}
+                                                fullWidth={true}
+                                                required={true}
+                                                helperText={error.confirmPassword}
+                                                margin="dense"
+                                                size="small"
+                                            />
 
-                                        <Button
-                                            size="medium"
-                                            variant="outlined"
-                                            sx={{borderWidth: 2}}>
-                                            Confirm
-                                        </Button>
+                                            <Button
+                                                size="medium"
+                                                variant="outlined"
+                                                sx={{borderWidth: 2}}>
+                                                Confirm
+                                            </Button>
 
-                                    </Stack>
-                                </form>
-                            </CardContent>
-                        </Card>
+                                        </Stack>
+                                    </form>
+                                </CardContent>
+                            </Card>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Container>
-        </Box>
+                </Container>
+            </Box>
+        </Layout>
     )
 }
 

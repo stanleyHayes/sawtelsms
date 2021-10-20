@@ -15,25 +15,34 @@ import ReportsPage from "./pages/reports/reports-page";
 import ResetPasswordPage from "./pages/authentication/reset-password-page";
 import ForgotPasswordPage from "./pages/authentication/forgotten-password-page";
 import PaymentsPage from "./pages/payments/payments-page";
+import LoginPage from "./pages/authentication/login-page";
+import PurchasesPage from "./pages/purchases/purchases-page";
+import ScrollToTop from "./components/shared/scroll-to-top";
+import ProfilePage from "./pages/account/profile-page";
 
 function App() {
     return (
         <Switch>
-            <Route path="/" exact={true} component={LandingPage}/>
-            <Route path="/about" exact={true} component={AboutPage}/>
-            <Route path="/change-password" exact={true} component={ChangePasswordPage}/>
-            <Route path="/forgot-password" exact={true} component={ForgotPasswordPage}/>
-            <Route path="/reset" exact={true} component={ResetPasswordPage}/>
-            <Route path="/signup" exact={true} component={RegisterPage}/>
-            <Route path="/contact" exact={true} component={ContactPage}/>
-            <Route path="/contacts" exact={true} component={ContactsPage}/>
-            <Route path="/dashboard" exact={true} component={DashboardPage}/>
-            <Route path="/groups" exact={true} component={GroupsPage}/>
-            <Route path="/send" exact={true} component={SendMessagePage}/>
-            <Route path="/pricing" exact={true} component={PricingPage}/>
-            <Route path="/payments" exact={true} component={PaymentsPage}/>
-            <Route path="/reports" exact={true} component={ReportsPage}/>
-            <Route path="/terms" exact={true} component={TermsAndConditionsPage}/>
+            <ScrollToTop>
+                <Route path="/" exact={true} component={LandingPage}/>
+                <Route path="/about" exact={true} component={AboutPage}/>
+                <Route path="/change-password" exact={true} component={ChangePasswordPage}/>
+                <Route path="/login" exact={true} component={LoginPage}/>
+                <Route path="/forgot-password" exact={true} component={ForgotPasswordPage}/>
+                <Route path="/reset" exact={true} component={ResetPasswordPage}/>
+                <Route path="/signup" exact={true} component={RegisterPage}/>
+                <Route path="/contact" exact={true} component={ContactPage}/>
+                <Route path="/contacts" exact={true} component={ContactsPage}/>
+                <Route path="/dashboard" exact={true} component={DashboardPage}/>
+                <Route path="/groups" exact={true} component={GroupsPage}/>
+                <Route path="/send" exact={true} component={SendMessagePage}/>
+                <Route path="/pricing" exact={true} component={PricingPage}/>
+                <Route path="/payments" exact={true} component={PaymentsPage}/>
+                <Route path="/reports" exact={true} component={ReportsPage}/>
+                <Route path="/purchases" exact={true} component={PurchasesPage}/>
+                <Route path="/terms" exact={true} component={TermsAndConditionsPage}/>
+                <Route path="/profile" exact={true} component={ProfilePage}/>
+            </ScrollToTop>
         </Switch>
     );
 }
