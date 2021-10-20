@@ -51,7 +51,7 @@ const Packages = ({handleNextPage, handlePackageSelect}) => {
                                     <TableCell>{smsPackage.price} GHS</TableCell>
                                     <TableCell>{smsPackage.package} SMS</TableCell>
                                     <TableCell>
-                                        <Radio onClick={() => handlePackageSelect(smsPackage)}/>
+                                        <Radio size="small" onClick={() => handlePackageSelect(smsPackage)}/>
                                     </TableCell>
                                 </TableRow>
                             )

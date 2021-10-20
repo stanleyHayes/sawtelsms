@@ -67,8 +67,6 @@ const GroupsPage = () => {
                                     <MenuItem value="EMAIL">Email Group</MenuItem>
                                 </Select>
                             </Grid>
-
-
                         </Grid>
 
                         <Divider variant="fullWidth" sx={{marginTop: 2, marginBottom: 2}}/>

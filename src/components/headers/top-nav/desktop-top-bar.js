@@ -46,7 +46,7 @@ const DesktopTopBar = () => {
     return (
         <Toolbar variant="dense">
             <Container>
-                {!authData ? (
+                {authData ? (
                     <Grid
                         container={true}
                         justifyContent="flex-end"
