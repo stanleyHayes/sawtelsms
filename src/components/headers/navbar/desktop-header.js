@@ -43,6 +43,9 @@ const DesktopHeader = () => {
                         <Grid item={true}>
                             <LinkItem path="/payments" label="Payments"/>
                         </Grid>
+                        <Grid item={true}>
+                            <LinkItem path="/purchases" label="Purchases"/>
+                        </Grid>
                     </Grid>
                 ) : (
                     <Grid container={true} justifyContent="space-around" alignItems="center">

@@ -52,7 +52,12 @@ const DesktopTopBar = () => {
                         justifyContent="flex-end"
                         alignItems="center" spacing={2}>
                         <Grid item={true}>
-                            <Typography variant="body2">Hello, {authData.name.split(' ')[0]}</Typography>
+                            <Link className={classes.link} to="/profile">
+                                <Typography
+                                    sx={{color: 'white'}} variant="body2">
+                                    Hello, {authData.name.split(' ')[0]}
+                                </Typography>
+                            </Link>
                         </Grid>
                         <Grid item={true}>
                             <Button sx={{color: 'secondary.main'}} variant="text">Log out</Button>
