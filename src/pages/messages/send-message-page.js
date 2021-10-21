@@ -30,13 +30,13 @@ const SendMessagePage = () => {
 
     return (
         <Layout>
-            <Box pt={8} pb={8} sx={{backgroundColor: 'background.light', minHeight: '50vh'}}>
+            <Box pt={8} pb={8} sx={{backgroundColor: 'background.default', minHeight: '60vh'}}>
                 <Container>
 
                     {/*Message Type Select*/}
                     <Grid container={true}>
                         <Grid item={true} xs={12} md={8}>
-                            <Card variant="outlined">
+                            <Card variant="elevation">
                                 <CardContent>
                                     <FormControl>
                                         <RadioGroup
@@ -77,7 +77,7 @@ const SendMessagePage = () => {
                             {/*Excel*/}
                             <Grid container={true}>
                                 <Grid item={true} xs={12} md={8}>
-                                    <Card variant="outlined">
+                                    <Card variant="elevation">
                                         <CardContent>
                                             <Grid container={true}>
                                                 <Grid item={true} xs={12}>
@@ -159,7 +159,7 @@ const SendMessagePage = () => {
                             <Grid container={true}>
                                 <Grid item={true} xs={12} md={8}>
 
-                                    <Card variant="outlined">
+                                    <Card variant="elevation">
                                         <CardContent>
                                             <Typography fontWeight='bold' variant="body1">
                                                 Schedule
@@ -222,7 +222,7 @@ const SendMessagePage = () => {
                             {/*Text Message */}
                             <Grid container={true}>
                                 <Grid item={true} xs={12} md={8}>
-                                    <Card variant="outlined">
+                                    <Card variant="elevation">
                                         <CardContent>
                                             <FormControl component="fieldset">
                                                 <FormLabel component="legend">
@@ -243,7 +243,7 @@ const SendMessagePage = () => {
 
                             <Grid container={true}>
                                 <Grid item={true} xs={12} md={8}>
-                                    <Card variant="outlined">
+                                    <Card variant="elevation">
                                         <CardContent>
                                             <Grid container={true}>
                                                 <Grid item={true} xs={12}>
@@ -294,7 +294,7 @@ const SendMessagePage = () => {
                             <Grid container={true} spacing={4} sx={{height: '100%'}}>
 
                                 <Grid item={true} xs={12} md={8}>
-                                    <Card variant="outlined">
+                                    <Card variant="elevation">
                                         <CardContent>
                                             <Grid container={true}>
                                                 <Grid item={true} xs={12}>
@@ -341,7 +341,7 @@ const SendMessagePage = () => {
                                 </Grid>
 
                                 <Grid item={true} xs={12} md={4} sx={{height: '100%'}}>
-                                    <Card variant="outlined" sx={{height: '100%'}}>
+                                    <Card variant="elevation" sx={{height: '100%'}}>
                                         <CardContent>
                                             <Typography fontWeight='bold' variant="body1">
                                                 Voice Messaging

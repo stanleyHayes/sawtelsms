@@ -21,7 +21,7 @@ const PaymentsPage = () => {
 
     return (
         <Layout>
-            <Box pt={8} pb={8} sx={{backgroundColor: 'background.light'}}>
+            <Box pt={8} pb={8} sx={{backgroundColor: 'background.default'}}>
                 <Container>
                     {renderPage(page)}
                 </Container>

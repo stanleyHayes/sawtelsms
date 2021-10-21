@@ -10,7 +10,7 @@ const DashboardPage = () => {
             <Box
                 pt={8}
                 pb={8}
-                sx={{minHeight: '50vh', backgroundColor: 'background.light'}}>
+                sx={{minHeight: '60vh'}}>
                 <Container>
                     <Grid container={true} spacing={2}>
                         <Grid item={true} xs={12} sm={6} md={3}>

@@ -1,10 +1,11 @@
-import {Button, Container, Grid, Stack, TextField, Toolbar, Typography} from "@mui/material";
+import {Button, Container, Grid, Menu, MenuItem, Stack, TextField, Toolbar} from "@mui/material";
 import {useSelector} from "react-redux";
 import {selectAuth} from "../../../redux/authentication/auth-reducer";
 import {useState} from "react";
 import {Link} from "react-router-dom";
 import {makeStyles} from "@mui/styles";
 import {grey} from "@mui/material/colors";
+import {KeyboardArrowDown} from "@mui/icons-material";
 
 const DesktopTopBar = () => {
 
@@ -12,6 +13,18 @@ const DesktopTopBar = () => {
 
     const [user, setUser] = useState({});
     const [error, setError] = useState({});
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
+
+    const handleMenuOpen = event => {
+        setMenuOpen(true);
+        setAnchorEl(event.currentTarget);
+    }
+
+    const handleMenuClose = () => {
+        setMenuOpen(false);
+        setAnchorEl(null);
+    }
 
     const {email, password} = user;
 
@@ -52,12 +65,32 @@ const DesktopTopBar = () => {
                         justifyContent="flex-end"
                         alignItems="center" spacing={2}>
                         <Grid item={true}>
-                            <Link className={classes.link} to="/profile">
-                                <Typography
-                                    sx={{color: 'white'}} variant="body2">
-                                    Hello, {authData.name.split(' ')[0]}
-                                </Typography>
-                            </Link>
+                            <Button
+                                endIcon={<KeyboardArrowDown/>}
+                                onClick={handleMenuOpen}
+                                sx={{color: 'white'}} variant="body2">
+                                Hello, {authData.name.split(' ')[0]}
+                            </Button>
+                            <Menu
+                                anchorEl={anchorEl}
+                                onClose={handleMenuClose}
+                                open={menuOpen}>
+                                <MenuItem>
+                                    <Link className={classes.link} to="/profile">
+                                        <Button fullWidth={true} variant="text">Profile</Button>
+                                    </Link>
+                                </MenuItem>
+                                <MenuItem>
+                                    <Link className={classes.link}  to="/change-password">
+                                        <Button fullWidth={true} variant="text">Change Password</Button>
+                                    </Link>
+                                </MenuItem>
+                                <MenuItem>
+                                    <Link className={classes.link}  to="/login">
+                                        <Button fullWidth={true} variant="text">Log out</Button>
+                                    </Link>
+                                </MenuItem>
+                            </Menu>
                         </Grid>
                         <Grid item={true}>
                             <Button sx={{color: 'secondary.main'}} variant="text">Log out</Button>

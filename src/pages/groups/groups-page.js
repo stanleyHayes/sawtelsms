@@ -25,7 +25,7 @@ const GroupsPage = () => {
 
     return (
         <Layout>
-            <Box pt={8} pb={8} sx={{backgroundColor: 'background.light'}}>
+            <Box pt={8} pb={8} sx={{backgroundColor: 'background.light', minHeight: '60vh'}}>
                 {contactsLoading && <LinearProgress variant="query"/>}
                 {contactsError &&
                 <Alert severity="error" variant="standard">

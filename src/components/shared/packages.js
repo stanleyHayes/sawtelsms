@@ -20,12 +20,12 @@ const Packages = ({handleNextPage, handlePackageSelect}) => {
     const {packages} = useSelector(selectPackages);
 
     return (
-        <Box p={2} variant="outlined" sx={{backgroundColor: 'background.light'}}>
+        <Box p={2} variant="outlined" sx={{backgroundColor: 'background.default'}}>
             <Typography variant="h6">
                 Buy Bulk SMS Packages
             </Typography>
 
-            <TableContainer sx={{mt: 2}} component={Paper} variant="outlined">
+            <TableContainer sx={{mt: 2}} component={Paper} variant="elevation">
                 <Table size="small">
                     <TableHead>
                         <TableRow>

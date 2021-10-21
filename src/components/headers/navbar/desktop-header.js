@@ -21,7 +21,7 @@ const DesktopHeader = () => {
 
     console.log(authData)
     return (
-        <Toolbar variant="dense">
+        <Toolbar variant="regular">
             <Container>
                 {authData ? (
                     <Grid container={true} justifyContent="space-around" alignItems="center">

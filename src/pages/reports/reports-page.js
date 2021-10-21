@@ -27,7 +27,7 @@ const ReportsPage = () => {
 
     return (
         <Layout>
-            <Box pt={8} pb={8} sx={{backgroundColor: 'background.light', minHeight: '50vh'}}>
+            <Box pt={8} pb={8} sx={{backgroundColor: 'background.default', minHeight: '60vh'}}>
                 {reportsLoading && <LinearProgress variant="query"/>}
                 {reportsError &&
                 <Alert severity="error" variant="standard">
@@ -114,8 +114,8 @@ const ReportsPage = () => {
                             </Typography>
                         </Box>
                     ) : (
-                        <TableContainer sx={{mt: 4}} component={Paper} variant="outlined">
-                            <Table size="small">
+                        <TableContainer sx={{mt: 4}} component={Paper} variant="elevation">
+                            <Table size="medium">
                                 <TableHead>
                                     <TableRow>
                                         <TableCell>
