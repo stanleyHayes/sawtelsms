@@ -25,7 +25,7 @@ const GroupsPage = () => {
 
     return (
         <Layout>
-            <Box pt={8} pb={8} sx={{backgroundColor: 'background.light', minHeight: '60vh'}}>
+            <Box pt={8} pb={8} sx={{backgroundColor: 'background.dark', minHeight: '60vh'}}>
                 {contactsLoading && <LinearProgress variant="query"/>}
                 {contactsError &&
                 <Alert severity="error" variant="standard">
@@ -104,7 +104,7 @@ const GroupsPage = () => {
                                 </Typography>
                             </Box>
                         ) : (
-                            <TableContainer sx={{mt: 4}} component={Paper} variant="outlined">
+                            <TableContainer sx={{mt: 4}} component={Paper} variant="elevation">
                                 <Table size="small">
                                     <TableHead>
                                         <TableRow>
