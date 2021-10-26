@@ -1,12 +1,12 @@
-import Layout from "../../components/layout/layout";
 import {Box, Container, Grid} from "@mui/material";
 import Stat from "../../components/shared/stat";
 import {Contacts, Money, Schedule, ScheduleSend} from "@mui/icons-material";
+import AuthenticatedLayout from "../../components/layout/authenticated-layout";
 
 const DashboardPage = () => {
 
     return (
-        <Layout>
+        <AuthenticatedLayout>
             <Box
                 pt={8}
                 pb={8}
@@ -40,7 +40,7 @@ const DashboardPage = () => {
                     </Grid>
                 </Container>
             </Box>
-        </Layout>
+        </AuthenticatedLayout>
     )
 }
 

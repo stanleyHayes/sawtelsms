@@ -1,5 +1,4 @@
 import React from "react";
-import Layout from "../../components/layout/layout";
 import {
     Box, Button, Card, CardContent, Checkbox,
     Container, Divider,
@@ -11,6 +10,7 @@ import {
 import {useState} from "react";
 import {DatePicker, TimePicker} from "@mui/lab";
 import {DateRange} from "@mui/icons-material";
+import AuthenticatedLayout from "../../components/layout/authenticated-layout";
 
 const SendMessagePage = () => {
 
@@ -29,7 +29,7 @@ const SendMessagePage = () => {
     }
 
     return (
-        <Layout>
+        <AuthenticatedLayout>
             <Box pt={8} pb={8} sx={{backgroundColor: 'background.default', minHeight: '60vh'}}>
                 <Container>
 
@@ -402,7 +402,7 @@ const SendMessagePage = () => {
                     </Grid>
                 </Container>
             </Box>
-        </Layout>
+        </AuthenticatedLayout>
     )
 }
 

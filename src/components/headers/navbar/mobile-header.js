@@ -19,7 +19,7 @@ const MobileHeader = () => {
     const dispatch = useDispatch();
 
     return (
-        <Toolbar variant="dense">
+        <Toolbar variant="regular">
             <Grid container={true} alignItems="center" spacing={2}>
                 <Grid item={true}>
                     <Menu

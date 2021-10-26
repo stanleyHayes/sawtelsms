@@ -1,4 +1,3 @@
-import Layout from "../../components/layout/layout";
 import {
     Alert,
     AlertTitle,
@@ -14,6 +13,7 @@ import {
 import {useState} from "react";
 import {useSelector} from "react-redux";
 import {selectContacts} from "../../redux/contacts/contact-reducer";
+import AuthenticatedLayout from "../../components/layout/authenticated-layout";
 
 const GroupsPage = () => {
 
@@ -24,7 +24,7 @@ const GroupsPage = () => {
 
 
     return (
-        <Layout>
+        <AuthenticatedLayout>
             <Box pt={8} pb={8} sx={{backgroundColor: 'background.dark', minHeight: '60vh'}}>
                 {contactsLoading && <LinearProgress variant="query"/>}
                 {contactsError &&
@@ -108,23 +108,23 @@ const GroupsPage = () => {
                                 <Table size="small">
                                     <TableHead>
                                         <TableRow>
-                                            <TableCell>
-                                                <Typography variant="h6">Name</Typography>
+                                            <TableCell variant="head">
+                                                Name
                                             </TableCell>
-                                            <TableCell>
-                                                <Typography variant="h6">SMS Number</Typography>
+                                            <TableCell variant="head">
+                                                SMS Number
                                             </TableCell>
-                                            <TableCell>
-                                                <Typography variant="h6">Whatsapp Number</Typography>
+                                            <TableCell variant="head">
+                                                Whatsapp Number
                                             </TableCell>
-                                            <TableCell>
-                                                <Typography variant="h6">Email</Typography>
+                                            <TableCell variant="head">
+                                                Email
                                             </TableCell>
-                                            <TableCell>
-                                                <Typography variant="h6">Group</Typography>
+                                            <TableCell variant="head">
+                                                Group
                                             </TableCell>
-                                            <TableCell>
-                                                <Typography variant="h6">Actions</Typography>
+                                            <TableCell variant="head">
+                                                Actions
                                             </TableCell>
                                         </TableRow>
                                     </TableHead>
@@ -154,11 +154,13 @@ const GroupsPage = () => {
                         )}
 
                         <Grid container={true} justifyContent="flex-end">
-                            <Grid item={true}>
+                            <Grid item={true} xs={12} md={3}>
                                 <Button
-                                    sx={{borderWidth: 2, mt: 2}}
+                                    sx={{borderWidth: 2, mt: 2, color: 'secondary.main'}}
                                     size="small"
-                                    variant="outlined">
+                                    disableElevation={true}
+                                    fullWidth={true}
+                                    variant="contained">
                                     Save
                                 </Button>
                             </Grid>
@@ -166,7 +168,7 @@ const GroupsPage = () => {
                     </Box>
                 </Container>
             </Box>
-        </Layout>
+        </AuthenticatedLayout>
     )
 }
 

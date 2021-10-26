@@ -18,9 +18,12 @@ import Layout from "../../components/layout/layout";
 
 const RegisterPage = () => {
 
-    const useStyles = makeStyles(theme => {
+    const useStyles = makeStyles(() => {
         return {
-            icon: {}
+            icon: {},
+            link: {
+                textDecoration: 'none'
+            }
         }
     });
 
@@ -61,7 +64,7 @@ const RegisterPage = () => {
     return (
         <Layout>
             <Box sx={{
-                backgroundColor: 'secondary.main',
+                backgroundColor: 'background.dark',
                 minHeight: '100vh',
                 display: 'flex',
                 justifyContent: 'center',
@@ -73,7 +76,7 @@ const RegisterPage = () => {
                 <Container>
                     <Grid container={true} justifyContent="center">
                         <Grid item={true} xs={12}>
-                            <Card variant="outlined" sx={{borderWidth: 2}}>
+                            <Card>
                                 <CardContent>
                                     <form onSubmit={handleSubmit}>
                                         <Grid
@@ -355,13 +358,15 @@ const RegisterPage = () => {
                                                     }/>
 
                                                 </Stack>
-                                                <Button
-                                                    disabled={!hasAgreed}
-                                                    size="medium"
-                                                    variant="outlined"
-                                                    sx={{borderWidth: 2}}>
-                                                    Sign Up
-                                                </Button>
+                                                <Link to="/dashboard" className={classes.link}>
+                                                    <Button
+                                                        disabled={!hasAgreed}
+                                                        size="medium"
+                                                        variant="outlined"
+                                                        sx={{borderWidth: 2}}>
+                                                        Sign Up
+                                                    </Button>
+                                                </Link>
                                             </Grid>
                                         </Grid>
                                     </form>

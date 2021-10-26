@@ -20,11 +20,11 @@ const TermsAndConditionsPage = () => {
     return (
         <Layout>
             <Box pb={8} sx={{backgroundColor: 'background.light', height: '100%'}}>
-                <Box sx={{height: '60vh'}}>
+                <Box sx={{height: '30vh'}}>
                     <img src="/assets/about.jpg" className={classes.banner} alt="About banner" title="About banner"/>
                 </Box>
                 <Container maxWidth="md" sx={{pt: 8}}>
-                    <Typography variant="h4" mb={2}>Terms and Conditions</Typography>
+                    <Typography sx={{textTransform: 'uppercase'}} variant="h4" mb={2}>Terms and Conditions</Typography>
                     <Typography variant="body2" mb={2}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco

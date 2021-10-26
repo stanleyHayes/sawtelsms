@@ -20,7 +20,7 @@ const Layout = ({children}) => {
             footer: {},
             content: {
                 flex: 1,
-                paddingTop: 96,
+                paddingTop: 64,
                 backgroundColor: theme.palette.background.default
             }
         }

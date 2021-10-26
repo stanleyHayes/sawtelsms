@@ -1,6 +1,6 @@
 import {Box, Button, Card, CardContent, Container, Grid, Stack, TextField, Typography} from "@mui/material";
 import {useState} from "react";
-import Layout from "../../components/layout/layout";
+import AuthenticatedLayout from "../../components/layout/authenticated-layout";
 
 const ChangePasswordPage = () => {
 
@@ -22,9 +22,11 @@ const ChangePasswordPage = () => {
         }else {
             setError({error, password: null});
         }
+
+        console.log(passwords)
     }
     return (
-        <Layout>
+        <AuthenticatedLayout>
             <Container>
                 <Box sx={{minHeight: '60vh', pt: 8, pb: 8}}>
                     <Container>
@@ -106,7 +108,7 @@ const ChangePasswordPage = () => {
                     </Container>
                 </Box>
             </Container>
-        </Layout>
+        </AuthenticatedLayout>
     )
 }
 export default ChangePasswordPage;

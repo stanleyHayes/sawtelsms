@@ -1,8 +1,8 @@
-import Layout from "../../components/layout/layout";
 import {useState} from "react";
 import Packages from "../../components/shared/packages";
 import PaymentMethod from "../../components/shared/payment-method";
 import {Box, Container} from "@mui/material";
+import AuthenticatedLayout from "../../components/layout/authenticated-layout";
 
 const PaymentsPage = () => {
 
@@ -20,13 +20,13 @@ const PaymentsPage = () => {
     }
 
     return (
-        <Layout>
+        <AuthenticatedLayout>
             <Box pt={8} pb={8} sx={{backgroundColor: 'background.default'}}>
                 <Container>
                     {renderPage(page)}
                 </Container>
             </Box>
-        </Layout>
+        </AuthenticatedLayout>
     )
 }
 

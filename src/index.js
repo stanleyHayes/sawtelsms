@@ -6,7 +6,6 @@ import {createTheme, ThemeProvider} from "@mui/material/styles";
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 import store from "./redux/store";
-import {yellow} from "@mui/material/colors";
 
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
@@ -25,7 +24,7 @@ const theme = createTheme({
             main: '#000000'
         },
         secondary: {
-            main: yellow['500']
+            main: '#e3bf3e'
         }
     },
     shape: {

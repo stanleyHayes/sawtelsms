@@ -1,6 +1,6 @@
-import Layout from "../../components/layout/layout";
 import {Box, Button, Card, CardContent, Container, Grid, Stack, TextField, Typography} from "@mui/material";
 import {useState} from "react";
+import AuthenticatedLayout from "../../components/layout/authenticated-layout";
 
 const ProfilePage = () => {
 
@@ -25,7 +25,7 @@ const ProfilePage = () => {
     }
 
     return (
-        <Layout>
+        <AuthenticatedLayout>
             <Box sx={{minHeight: '60vh', pt: 8, pb: 8}}>
                 <Container>
                     <Grid
@@ -151,7 +151,7 @@ const ProfilePage = () => {
                     </Grid>
                 </Container>
             </Box>
-        </Layout>
+        </AuthenticatedLayout>
     )
 }
 

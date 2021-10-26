@@ -15,7 +15,7 @@ import {makeStyles} from "@mui/styles";
 
 const PricingPage = () => {
 
-    const useStyles = makeStyles(theme => {
+    const useStyles = makeStyles(() => {
         return {
             banner: {
                 width: '100%',
@@ -31,7 +31,7 @@ const PricingPage = () => {
     return (
         <Layout>
             <Box pb={8} sx={{backgroundColor: 'background.light', height: '100%'}}>
-                <Box sx={{height: '60vh'}}>
+                <Box sx={{height: '30vh'}}>
                     <img src="/assets/about.jpg" className={classes.banner} alt="About banner" title="About banner"/>
                 </Box>
                 <Container sx={{pt: 8}} maxWidth="md">
@@ -83,7 +83,7 @@ const PricingPage = () => {
                             </TableContainer>
                         </Grid>
                         <Grid item={true} xs={12} md={6}>
-                            <Typography variant="h4" mb={2}>Affordable Prices</Typography>
+                            <Typography sx={{textTransform: 'uppercase'}} variant="h4" mb={2}>Affordable Prices</Typography>
                             <Typography variant="body2" mb={2}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt ut

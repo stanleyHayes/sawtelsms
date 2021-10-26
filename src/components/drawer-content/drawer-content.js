@@ -1,5 +1,15 @@
 import {Button, Container, Divider, Grid, Stack} from "@mui/material";
-import {BusinessCenter, Close, ContactPage, Dashboard, Favorite, Home, Info, Star} from "@mui/icons-material";
+import {
+    AssessmentOutlined,
+    Close,
+    ContactPage, ContactsOutlined,
+    DashboardOutlined, FaceOutlined,
+    Favorite, GroupOutlined,
+    Home,
+    Info, MultipleStopOutlined, PaymentOutlined,
+    SendOutlined,
+    Star
+} from "@mui/icons-material";
 import {UI_ACTION_CREATORS} from "../../redux/ui/ui-action-creators";
 import {useDispatch, useSelector} from "react-redux";
 import SideBarLinkItem from "../shared/side-bar-link-item";
@@ -37,7 +47,7 @@ const DrawerContent = () => {
                 <Stack mt={2} direction="column" divider={<Divider/>} spacing={2}>
                     <SideBarLinkItem
                         icon={
-                            <Dashboard
+                            <DashboardOutlined
                                 sx={{
                                     color: "secondary.main",
                                     borderRadius: 1,
@@ -50,7 +60,7 @@ const DrawerContent = () => {
                         path="/dashboard"
                     />
                     <SideBarLinkItem
-                        icon={<Info
+                        icon={<SendOutlined
                             sx={{
                                 color: "secondary.main",
                                 borderRadius: 1,
@@ -64,7 +74,7 @@ const DrawerContent = () => {
                         path="/send"
                     />
                     <SideBarLinkItem
-                        icon={<BusinessCenter
+                        icon={<ContactsOutlined
                             sx={{
                                 color: "secondary.main",
                                 borderRadius: 1,
@@ -78,7 +88,7 @@ const DrawerContent = () => {
                         path="/contacts"
                     />
                     <SideBarLinkItem
-                        icon={<Star
+                        icon={<GroupOutlined
                             sx={{
                                 color: "secondary.main",
                                 borderRadius: 1,
@@ -92,7 +102,7 @@ const DrawerContent = () => {
                         path="/groups"
                     />
                     <SideBarLinkItem
-                        icon={<Favorite
+                        icon={<AssessmentOutlined
                             sx={{
                                 color: "secondary.main",
                                 borderRadius: 1,
@@ -106,7 +116,7 @@ const DrawerContent = () => {
                         path="/reports"
                     />
                     <SideBarLinkItem
-                        icon={<ContactPage
+                        icon={<PaymentOutlined
                             sx={{
                                 color: "secondary.main",
                                 borderRadius: 1,
@@ -120,7 +130,7 @@ const DrawerContent = () => {
                         path="/payments"
                     />
                     <SideBarLinkItem
-                        icon={<ContactPage
+                        icon={<MultipleStopOutlined
                             sx={{
                                 color: "secondary.main",
                                 borderRadius: 1,
@@ -135,7 +145,7 @@ const DrawerContent = () => {
                     />
 
                     <SideBarLinkItem
-                        icon={<ContactPage
+                        icon={<FaceOutlined
                             sx={{
                                 color: "secondary.main",
                                 borderRadius: 1,

@@ -1,4 +1,3 @@
-import Layout from "../../components/layout/layout";
 import {
     Alert,
     AlertTitle,
@@ -14,6 +13,7 @@ import {
 import {useSelector} from "react-redux";
 import {selectContacts} from "../../redux/contacts/contact-reducer";
 import {useState} from "react";
+import AuthenticatedLayout from "../../components/layout/authenticated-layout";
 
 const ContactsPage = () => {
 
@@ -43,7 +43,7 @@ const ContactsPage = () => {
     }
 
     return (
-        <Layout>
+        <AuthenticatedLayout>
             <Box pt={8} pb={8} sx={{backgroundColor: 'background.default', minHeight: '60vh'}}>
                 {contactsLoading && <LinearProgress variant="query"/>}
                 {contactsError &&
@@ -266,23 +266,23 @@ const ContactsPage = () => {
                             <Table size="small">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>
-                                            <Typography variant="h6">Name</Typography>
+                                        <TableCell variant="head">
+                                            Name
+                                        </TableCell>
+                                        <TableCell variant="head">
+                                            SMS Number
+                                        </TableCell>
+                                        <TableCell variant="head">
+                                            Whatsapp Number
                                         </TableCell>
                                         <TableCell>
-                                            <Typography variant="h6">SMS Number</Typography>
+                                            Email
                                         </TableCell>
                                         <TableCell>
-                                            <Typography variant="h6">Whatsapp Number</Typography>
+                                            Group
                                         </TableCell>
                                         <TableCell>
-                                            <Typography variant="h6">Email</Typography>
-                                        </TableCell>
-                                        <TableCell>
-                                            <Typography variant="h6">Group</Typography>
-                                        </TableCell>
-                                        <TableCell>
-                                            <Typography variant="h6">Actions</Typography>
+                                            Actions
                                         </TableCell>
                                     </TableRow>
                                 </TableHead>
@@ -298,8 +298,8 @@ const ContactsPage = () => {
                                                 <TableCell>
                                                     <Grid container={true}>
                                                         <Grid item={true}>
-                                                            <Button variant="text">Edit</Button>
-                                                            <Button variant="text">Delete</Button>
+                                                            <Button color="primary" variant="text">Edit</Button>
+                                                            <Button color="error">Delete</Button>
                                                         </Grid>
                                                     </Grid>
                                                 </TableCell>
@@ -312,7 +312,7 @@ const ContactsPage = () => {
                     )}
                 </Container>
             </Box>
-        </Layout>
+        </AuthenticatedLayout>
     )
 }
 

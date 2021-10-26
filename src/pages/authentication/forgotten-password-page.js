@@ -46,7 +46,7 @@ const ForgotPasswordPage = () => {
     return (
         <Layout>
             <Box sx={{
-                backgroundColor: 'secondary.main',
+                backgroundColor: 'background.dark',
                 minHeight: '100vh',
                 display: 'flex',
                 justifyContent: 'center',
@@ -58,7 +58,7 @@ const ForgotPasswordPage = () => {
                 <Container>
                     <Grid container={true} justifyContent="center">
                         <Grid item={true} xs={12} md={5}>
-                            <Card variant="outlined" sx={{borderWidth: 2}}>
+                            <Card>
                                 <CardContent>
                                     <form onSubmit={handleSubmit}>
                                         <Stack spacing={2} direction="column">

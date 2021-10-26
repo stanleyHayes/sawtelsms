@@ -53,7 +53,7 @@ const ResetPasswordPage = () => {
     return (
         <Layout>
             <Box sx={{
-                backgroundColor: 'secondary.main',
+                backgroundColor: 'background.dark',
                 minHeight: '100vh',
                 display: 'flex',
                 justifyContent: 'center',
@@ -65,7 +65,7 @@ const ResetPasswordPage = () => {
                 <Container>
                     <Grid container={true} justifyContent="center">
                         <Grid item={true} xs={12} md={4}>
-                            <Card variant="outlined" sx={{borderWidth: 2}}>
+                            <Card>
                                 <CardContent>
                                     <form onSubmit={handleSubmit}>
                                         <Stack spacing={2} direction="column">

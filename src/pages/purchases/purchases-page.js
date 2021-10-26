@@ -1,4 +1,3 @@
-import Layout from "../../components/layout/layout";
 import {
     Alert,
     AlertTitle,
@@ -14,13 +13,14 @@ import {useSelector} from "react-redux";
 import {selectTransactions} from "../../redux/transactions/transaction-reducer";
 import React from "react";
 import moment from "moment";
+import AuthenticatedLayout from "../../components/layout/authenticated-layout";
 
 const PurchasesPage = () => {
 
     const {transactions, transactionsLoading, transactionsError} = useSelector(selectTransactions);
 
     return (
-        <Layout>
+        <AuthenticatedLayout>
             <Box pt={8} pb={8} sx={{backgroundColor: 'background.default', minHeight: '60vh'}}>
                 {transactionsLoading && <LinearProgress variant="query"/>}
 
@@ -45,20 +45,20 @@ const PurchasesPage = () => {
                             <Table size="medium">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>
-                                            <Typography variant="h6">#</Typography>
+                                        <TableCell variant="head">
+                                            #
                                         </TableCell>
-                                        <TableCell>
-                                            <Typography variant="h6">Payment Details</Typography>
+                                        <TableCell variant="head">
+                                            Payment Details
                                         </TableCell>
-                                        <TableCell>
-                                            <Typography variant="h6">Amount</Typography>
+                                        <TableCell variant="head">
+                                            Amount
                                         </TableCell>
-                                        <TableCell>
-                                            <Typography variant="h6">Status</Typography>
+                                        <TableCell variant="head">
+                                            Status
                                         </TableCell>
-                                        <TableCell>
-                                            <Typography variant="h6">Date</Typography>
+                                        <TableCell variant="head">
+                                            Date
                                         </TableCell>
                                     </TableRow>
                                 </TableHead>
@@ -80,7 +80,7 @@ const PurchasesPage = () => {
                     )}
                 </Container>
             </Box>
-        </Layout>
+        </AuthenticatedLayout>
     )
 }
 

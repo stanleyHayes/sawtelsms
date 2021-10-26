@@ -1,4 +1,3 @@
-import Layout from "../../components/layout/layout";
 import {
     Alert, AlertTitle,
     Box,
@@ -17,6 +16,7 @@ import {DateRange} from "@mui/icons-material";
 import {useSelector} from "react-redux";
 import {selectReports} from "../../redux/reports/report-reducer";
 import moment from "moment";
+import AuthenticatedLayout from "../../components/layout/authenticated-layout";
 
 const ReportsPage = () => {
 
@@ -26,7 +26,7 @@ const ReportsPage = () => {
     const {reports, reportsError, reportsLoading} = useSelector(selectReports);
 
     return (
-        <Layout>
+        <AuthenticatedLayout>
             <Box pt={8} pb={8} sx={{backgroundColor: 'background.default', minHeight: '60vh'}}>
                 {reportsLoading && <LinearProgress variant="query"/>}
                 {reportsError &&
@@ -153,7 +153,7 @@ const ReportsPage = () => {
                     )}
                 </Container>
             </Box>
-        </Layout>
+        </AuthenticatedLayout>
     )
 }
 

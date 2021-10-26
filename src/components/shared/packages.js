@@ -29,17 +29,17 @@ const Packages = ({handleNextPage, handlePackageSelect}) => {
                 <Table size="small">
                     <TableHead>
                         <TableRow>
-                            <TableCell>
-                                <Typography variant="h6">#</Typography>
+                            <TableCell variant="head">
+                                #
                             </TableCell>
-                            <TableCell>
-                                <Typography variant="h6">Price</Typography>
+                            <TableCell variant="head">
+                                Price
                             </TableCell>
-                            <TableCell>
-                                <Typography variant="h6">SMS Package</Typography>
+                            <TableCell variant="head">
+                                SMS Package
                             </TableCell>
-                            <TableCell>
-                                <Typography variant="h6">Select</Typography>
+                            <TableCell variant="head">
+                                Select
                             </TableCell>
                         </TableRow>
                     </TableHead>
@@ -47,7 +47,7 @@ const Packages = ({handleNextPage, handlePackageSelect}) => {
                         {packages.map((smsPackage, index) => {
                             return (
                                 <TableRow key={index} hover={true}>
-                                    <TableCell>{smsPackage.number}</TableCell>
+                                    <TableCell>{index + 1}</TableCell>
                                     <TableCell>{smsPackage.price} GHS</TableCell>
                                     <TableCell>{smsPackage.package} SMS</TableCell>
                                     <TableCell>
@@ -61,11 +61,14 @@ const Packages = ({handleNextPage, handlePackageSelect}) => {
             </TableContainer>
 
             <Grid sx={{marginTop: 2, marginBottom: 2}} container={true} justifyContent="flex-end">
-                <Grid item={true}>
+                <Grid item={true} xs={12} md={3}>
                     <Button
+                        fullWidth={true}
                         size="medium"
                         onClick={handleNextPage}
-                        variant="outlined">
+                        disableElevation={true}
+                        sx={{color: 'secondary.main'}}
+                        variant="contained">
                         Next
                     </Button>
                 </Grid>

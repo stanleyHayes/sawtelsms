@@ -19,7 +19,7 @@ const PurchaseSummary = () => {
     }
 
     return (
-        <Card variant="outlined" sx={{backgroundColor: 'background.default'}}>
+        <Card sx={{backgroundColor: 'background.paper'}}>
             <CardContent>
                 <Typography variant="h5">Purchase Summary</Typography>
                 <Grid container={true} sx={{marginTop: 2}}>
@@ -60,8 +60,8 @@ const PurchaseSummary = () => {
                             type="number"
                             variant="outlined"
                             error={Boolean(error)}
-                            label="CVV"
-                            placeholder="CVV"
+                            label="Voucher"
+                            placeholder="Enter voucher"
                             onChange={event => setVoucherCode(event.target.value)}
                             fullWidth={true}
                             required={true}

@@ -68,7 +68,7 @@ const LoginPage = () => {
     return (
         <Layout>
             <Box sx={{
-                backgroundColor: 'secondary.main',
+                backgroundColor: 'background.dark',
                 minHeight: '100vh',
                 display: 'flex',
                 justifyContent: 'center',
@@ -80,7 +80,7 @@ const LoginPage = () => {
                 <Container>
                     <Grid container={true} justifyContent="center">
                         <Grid item={true} xs={12} md={4}>
-                            <Card variant="outlined" sx={{borderWidth: 2}}>
+                            <Card>
                                 <CardContent>
                                     <form onSubmit={handleSubmit}>
                                         <Stack spacing={2} direction="column">
@@ -147,6 +147,16 @@ const LoginPage = () => {
                                                 sx={{borderWidth: 2}}>
                                                 Login
                                             </Button>
+
+                                            <Link to="/signup" className={classes.link}>
+                                                <Button
+                                                    fullWidth={true}
+                                                    size="medium"
+                                                    variant="text"
+                                                    sx={{borderWidth: 2}}>
+                                                    Don't have an account? Sign up
+                                                </Button>
+                                            </Link>
 
                                         </Stack>
                                     </form>
