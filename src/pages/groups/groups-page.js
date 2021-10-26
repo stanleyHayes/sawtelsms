@@ -156,7 +156,7 @@ const GroupsPage = () => {
                         <Grid container={true} justifyContent="flex-end">
                             <Grid item={true} xs={12} md={3}>
                                 <Button
-                                    sx={{borderWidth: 2, mt: 2, color: 'secondary.main'}}
+                                    sx={{borderWidth: 2, mt: 2, color: 'secondary.main', pt: 1, pb: 1}}
                                     size="small"
                                     disableElevation={true}
                                     fullWidth={true}

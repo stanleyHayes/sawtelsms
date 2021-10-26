@@ -118,20 +118,20 @@ const ReportsPage = () => {
                             <Table size="medium">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>
-                                            <Typography variant="h6">Sender</Typography>
+                                        <TableCell variant="head">
+                                            Sender
                                         </TableCell>
-                                        <TableCell>
-                                            <Typography variant="h6">Recipient</Typography>
+                                        <TableCell variant="head">
+                                            Recipient
                                         </TableCell>
-                                        <TableCell>
-                                            <Typography variant="h6">Message</Typography>
+                                        <TableCell variant="head">
+                                            Message
                                         </TableCell>
-                                        <TableCell>
-                                            <Typography variant="h6">Date</Typography>
+                                        <TableCell variant="head">
+                                            Date
                                         </TableCell>
-                                        <TableCell>
-                                            <Typography variant="h6">Status</Typography>
+                                        <TableCell variant="head">
+                                            Status
                                         </TableCell>
                                     </TableRow>
                                 </TableHead>
